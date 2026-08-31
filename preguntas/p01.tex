@@ -1,1 +1,18 @@
 \addcontentsline{toc}{section}{Inciso a}
+
+\section{Conceptos generales de bases de datos}
+
+\subsection*{a.}
+
+A diferencia de los sistemas de bases de datos, las hojas de cálculo están principalmente diseñadas para el análisis numérico y la presentación de información en un formato de tabla bidimensional; además, ofrecen accesibilidad por completo a quien accede a éste, un usuario a la vez, por lo que carecen de sistemas de restricción de acceso, sino que los archivos son cargados por completo y abiertos a lectura-escritura. Puesto que no tienen un enfoque en el almacenamiento estructurado y relacional, presentan limitaciones en cuanto a:
+\begin{itemize}
+    \item \textbf{Escalabilidad:} Conforme aumenta la cantidad de datos almacenados, el rendimiento de la se puede ver considerablemente afectado puesto que no está diseñado para almacenar grandes volúmenes de datos. Además, aplicaciones como Excel tienen un límite definido en la extensión manejable de las dimensiones. Por otra parte, no se pueden añadir relaciones con otras tablas aplicando integridad referencial, puesto que las tablas no cuentan con llaves primarias y foráneas que puedan vincularlas entre sí.
+    \item \textbf{Integridad:} El acceso para lectura y escritura de datos no cuenta con tecnología de autenticación, sino que tiene un enfoque de total accesibilidad de escritura; esto permite modificar cualquier parte del archivo, dejándolo expuesto a errores si éstos se ingresan manualmente. Además, si el sistema sufre de un apagón mientras el archivo es manipulado, o si se trata de sobreescribir por dos fuentes concurrentes, se corre el riesgo de que éste se corrompa por completo.
+    \item \textbf{Consistencia de datos:} No se puede validar un tipo de dato en particular para una columna, sino que se puede ingresar texto libre en cualquier celda, dando pie fácilmente a violaciones a la propiedad de integridad puesto que los datos pueden ser almacenados en cualquier formato.
+\end{itemize}
+
+\textbf{Escenarios puntuales:}
+\begin{itemize}
+    \item \textbf{No utilizar hojas de cálculo:} Si en un hospital se busca desarrollar un sisteam de gestión de los datos de los pacientes no es viable desarrollar éste con una hoja de cálculo, puesto que toda la información de la insitución no solo puede quedar expuesta a perderse ante incidentes como apagones si se está manipulando, sino que también es visible para cualquier empleado con cualquier acceso al sistema, puesto que el archivo es de libre escritura y no integra roles de usuario $-$si bien esto se puede agregar en cierta medida con restricciones a nivel de OS y una aplicación de gestión, el archivo sigue vulnerable ante el superusuario$-$.
+    \item \textbf{Mejor utilizar hojas de cálculo:} En un caso donde se quiera organizar una cantidad de reducida de datos que no se consideren como críticos (p.ej. contraseñas) y con un único tipo de acceso y que sea total, como en un registro personal de itinerario o de finanzas, es preferible hacer uso de una herramienta de hojas de cálculo dada su interfaz amigable a comparación del proceso de levantamiento de un sistema de base de datos.
+\end{itemize}

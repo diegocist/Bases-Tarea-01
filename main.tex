@@ -1,10 +1,14 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{parskip}
 \usepackage[spanish]{babel}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
+\usepackage{makecell}
 \usepackage{geometry}
+
 \geometry{letterpaper, margin=2.5cm}
+\setlength{\parskip}{1em}
 
 \begin{document}
 \begin{titlepage}
@@ -44,17 +48,17 @@
 
 % Preguntas
 
- \input{preguntas/p01.tex}
- \input{preguntas/p02.tex}
- \input{preguntas/p03.tex}
- \input{preguntas/p04.tex}
- \input{preguntas/p05.tex}
- \input{preguntas/p06.tex}
- \input{preguntas/p07.tex}
- \input{preguntas/p08.tex}
- \input{preguntas/p09.tex}
- \input{preguntas/p10.tex}
- \input{preguntas/resumen.tex}
- \input{preguntas/ensayo.tex}
+ \include{preguntas/p01.tex}
+ \include{preguntas/p02.tex}
+ \include{preguntas/p03.tex}
+ \include{preguntas/p04.tex}
+ \include{preguntas/p05.tex}
+ \include{preguntas/p06.tex}
+ \include{preguntas/p07.tex}
+ \include{preguntas/p08.tex}
+ \include{preguntas/p09.tex}
+ \include{preguntas/p10.tex}
+ \include{preguntas/resumen.tex}
+ \include{preguntas/ensayo.tex}
 
 \end{document}
