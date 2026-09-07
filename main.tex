@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{makecell}
 \usepackage{geometry}
+\usepackage[backend=biber, style=apa]{biblatex}
 
 % --------------------- Comandos para pie de página ---------------------
 \usepackage[style=verbose, backend=biber]{biblatex}
@@ -80,5 +81,8 @@
  \include{ensayos/ensayoSaul.tex}
  \include{ensayos/ensayoDiego.tex}
  \include{ensayos/ensayoLucia.tex}
+
+\newpage
+\printbibliography[title={Referencias}]
 
 \end{document}
