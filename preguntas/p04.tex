@@ -1,2 +1,31 @@
 \addcontentsline{toc}{section}{Inciso d}
 
+\subsection*{d.}
+
+Un Sistema Manejador de Bases de Datos es el software que proporciona cuatro herramientas esenciales para el manejo de datos:
+\begin{itemize}
+    \item \textbf{Definir:} Permite definir la lógica y estructura de los datos, esto es, sus tipos, restricciones y relaciones entre ellos.
+    
+    \item \textbf{Construir:} Es el proceso de almacenamiento de los datos físicamente, manejado por el SMBD.
+    
+    \item \textbf{Manipular:} Como su nombre lo dice, manipula los datos mediante inserciones y actualizaciones de datos. Además incluye la función de consulta de estos.
+
+    \item \textbf{Compartir:} Permite que diversos usuarios puedan interactuar con la Base de Datos paralelamente, es decir, de forma simultánea. \\
+    
+\end{itemize}
+
+\textbf{¿Por qué consideramos que es importante (o no) que un administrador de bases de datos conozca las características de un SMBD?}\\
+
+Consideramos que, en efecto, el Administrador de Bases de Datos (DBA) debe conocer las características de un SMBD.
+El administrador de bases de datos se encarga principalmente de las siguientes tareas:
+\begin{enumerate}
+    \item \textbf{Mapear el modelo lógico al físico:} Esto es, se encarga de plasmar los tipos, restricciones y relaciones entre los datos físicamente en la memoria.
+    \item \textbf{Implementar copias de seguridad:} Para salvaguardar la integridad de los datos utiliza copias de seguridad que permitan restablecer los datos en casos de contingencias por algún incidente.
+    \item \textbf{Optimización de rendimiento:} Al hacer la traducción del modelo lógico al físico suele optimizar la distribución de memoria a las tareas más utilizadas por los usuarios.
+    \item \textbf{Mantenimiento y actualizaciones:} Suele actualizar el software y aplicar parches de seguridad al sistema.
+\end{enumerate}
+
+Primero debemos notar que es esencial que el administrador de bases de datos conozca su SMBD específico, pues cada software puede diferir en su implementación. Sin embargo, mi argumento se sostiene principalmente por la tarea del mapeo del modelo lógico al físico, pues es en este aspecto donde es imperativo que el DBA domine el tema.
+Ya que será el encargado de crear las relaciones en el medio de almacenamiento, las restricciones y optimizar el uso de la base de datos, lo que requiere considerar qué relaciones serán más usadas en las consultas de los usuarios.\\
+Si el DBA no comprende las características del SMBD no podrá establecer la correspondencia conceptual/física eficiente o, más aún, podrá violar la independencia física de los datos, es decir, que cambios en el nivel físico afecten el nivel lógico. Además, si no domina el esquema, podrá no definir correctamente las relaciones entre las entidades, la elección de los tipos de datos para cada atributo planteado y las restricciones de integridad, por lo que no representaría fielmente el ``Mini mundo'' planteado por el diseñador, permitiendo inconsistencias en los datos almacenados. Finalmente estas limitaciones serían un impedimento para la escalabilidad del sistema en un futuro.
+

@@ -1,1 +1,35 @@
 \addcontentsline{toc}{section}{Inciso g}
+
+\subsection*{g.}
+
+\textbf{¿Cuáles son las principales responsabilidades del DBA en este contexto, considerando la necesidad de confidencialidad, trazabilidad y disponibilidad continua de la información?}
+
+Las responsabilidades del DBA se centran principalmente en los clientes, siniestros y cumplimiento normativo de la empresa aseguradora, ya que como se mencionó en una pregunta pasada, el DBA se encarga de la administración en el nivel físico del sistema de bases de datos, que compone el mapeo, optimización, mantenimiento y seguridad de los datos. Así podremos dividir sus responsabilidades en las tres necesidades planteadas en la pregunta:
+
+\begin{enumerate}
+    \item \textbf{Confidencialidad:} Se encargará de proteger los datos, definiendo roles, permisos y privilegios de los usuarios de la empresa. Así se controlará quién sí y quién no puede acceder a la información de los clientes, siguiendo las normativas. Por ejemplo, si un cliente siempre debería tener el poder de revisar su información personal registrada, por otro lado un trabajador no debería poder conocer toda la información personal de los clientes, sin embargo, sí deberá conocer el historial de pólizas del cliente o información puntual que necesite.
+    
+    \item \textbf{Trazabilidad:} Se encargará de implementar una forma de conocer quién modificó qué dato, cómo y cuándo, de esta forma no habrá vacíos en la manipulación de las bases de datos. Esto se logrará a través de la correcta configuración de bitácoras de transacciones y auditorías del sistema.
+    
+    \item \textbf{Disponibilidad continua:} Permitirá que los usuarios de la base de datos, en este caso los empleados, consulten los datos del cliente de forma simultánea y que el SMBD soporte esta acción. Además requiere la planificación de respaldos, actualización y monitoreo de la base de datos por parte del DBA para que el sistema siga operando en caso de siniestros imprevistos, así como para implementar versiones de respaldo consistentes para recuperar la información ante cualquier adversidad que se presente.
+\end{enumerate}
+
+\textbf{¿Qué habilidades técnicas y conocimientos específicos (por ejemplo, manejo de datos sensibles, normativas como protección de datos personales, respaldo y recuperación ante desastres) son más críticos para este entorno?}
+
+Creemos que las habilidades técnicas y conocimientos mencionados en la pregunta efectivamente pertenecen a las habilidades y conocimientos más críticos en el entorno, sin embargo, considero que la trazabilidad de los datos y la disponibilidad continua también pertenecen a este conjunto de conocimientos importantes. Desarrollaré cada punto en particular y explicaré por qué creo que son esenciales y ninguna puede faltar:
+
+\begin{enumerate}
+    \item \textbf{Manejo de datos sensibles y normativas como protección de datos personales:} Primeramente, por cuestiones legales los clientes tienen como derecho la protección de sus datos, por ejemplo, en México existe la ``Ley Federal de Protección de Datos Personales en Posesión de los Particulares''[1] que estipula que cualquier empresa debe proteger tus datos personales. Así que es imperativo que la empresa desarrolle (en particular el o los DBA) la confidencialidad como se explicó en la pregunta pasada.
+    
+    \item \textbf{Respaldo y recuperación ante desastres:} Ante cualquier adversidad contra el sistema de base de datos, el sistema debe ser capaz de tener una copia de seguridad del momento anterior a este para garantizar la integridad de los datos y si se interrumpió alguna transacción esta vuelve a su estado original para realizarla exitosamente. Sin esto la empresa sufriría con cualquier incidente (por ejemplo, la descompostura de algún servidor) y podría tener una complicación grave que la pueda llevar a la quiebra.
+    
+    \item \textbf{Trazabilidad y disponibilidad de datos:} La trazabilidad permite saber quién modificó qué, cuándo y dónde, esto es vital para detectar fraudes o accesos no autorizados de los empleados, sin esto el sistema podría ser vulnerado desde adentro. Por otra parte la disponibilidad es esencial para que los múltiples empleados puedan consultar, por ejemplo, pólizas al mismo tiempo sin que el sistema genere fallas o vulnere la integridad de los datos.
+\end{enumerate}
+
+\textbf{Si el DBA no ejecuta consultas directamente, ¿por qué sigue siendo necesario que comprenda el modelo lógico de la base de datos? Justifica tu respuesta considerando la importancia de la integridad de los datos en procesos como la evaluación de riesgos o la detección de fraudes.}
+
+Como se planteó anteriormente en el inciso d) el DBA necesita entender totalmente el modelo lógico para realizar una implementación correcta y óptima de este, en este caso nos concentraremos en justificar esto con respecto a la integridad de los datos en el contexto de la empresa aseguradora, es decir, con la evaluación de riesgos o la detección de fraudes.
+
+Supongamos que el DBA no comprende correctamente el modelo lógico de la base de datos así que cuando implementa las restricciones otorga poder excesivo a algunos empleados, por ejemplo, poder modificar los datos de los clientes y el historial de pagos. Así, un empleado toma una póliza vencida, la pone a nombre de un cliente y cambia la fecha para que esté activa; después crea un siniestro falso, uno por \$25,000 pesos de algún accidente, la transferencia se hace y al tener el poder de modificación del historial de pagos elimina el pago final, de esta manera la empresa cuando se dé cuenta del desfalco no podrá encontrar quién lo hizo ni exactamente cómo pasó. Este es un ejemplo de cómo un DBA que no domine el modelo lógico podría pasar por alto restricciones esenciales para una empresa. En el caso de la evaluación de riesgos el empleado fraudulento podría modificar alguna condición de un cliente para que la póliza se cobre a un precio más bajo, estos ejemplos atentan contra la integridad de los datos, creando contradicciones al imponer datos falsos.
+
+Por estos motivos, aunque el DBA no ejecute consultas o diseñe el modelo lógico, necesita comprenderlo para no cometer errores y realizar su trabajo correctamente.
