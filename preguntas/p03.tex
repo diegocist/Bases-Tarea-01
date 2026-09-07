@@ -1,1 +1,27 @@
+\subsection*{c.}
 \addcontentsline{toc}{subsection}{Inciso c}
+\textbf{Una empresa de logística necesita adaptar su sistema de base de datos para incluir nuevas
+funcionalidades, como el seguimiento en tiempo real de paquetes y una nueva categoría de
+clientes corporativos. Antes de realizar estos cambios, el equipo de desarrollo debe considerar los
+niveles de independencia de los datos. Responde lo siguiente:}
+
+\begin{itemize}
+    \item \textbf{¿Qué riesgos podrían surgir sí no existe independencia lógica entre el diseño conceptual y las aplicaciones que consumen los datos?}
+
+    Si no existe independencia lógica, al modificar los esquemas conceptuales de la base de datos se obliga a modificar los esquemas externos y el código de las aplicaciones que consumen la información. En la empresa de logística, al añadir la nueva categoría de clientes corporativos (mediante tablas o atributos del esquema conceptual), se requerirá forzosamente reescribir y recompilar los programas de aplicación. Esto genera un incremento en los tiempos y costos de mantenimiento, además pueden ocurrir fallos en la producción si la aplicación no se actualiza a tiempo.
+    
+    \item \textbf{¿Qué problemas operativos aparecerían sí no se logra la independencia física, especialmente en términos de almacenamiento y rendimiento?}
+    
+    Si no se logra la independencia física, al momento de querer modificar el esquema interno, tendremos necesariamente que modificar el esquema conceptual y se romperán las consultas de los programas de aplicación.
+
+    Enfocándonos en la empresa de logística, si no se logra la independencia física al querer aplicar nuevas funciones como el seguimiento en tiempo real de paquetes, se presentarán varios problemas operativos. En cuestión de almacenamiento, no se podrá cambiar la ubicación de los datos en disco, ni comprimir, dividir o fusionar registros para optimizar el espacio sin alterar las aplicaciones. Y hablando del rendimiento, no se podrán crear estructuras o rutas de acceso adicionales para acelerar las búsquedas de paquetes, generando respuestas lentas e ineficientes.
+    
+    \item \textbf{Proporciona un ejemplo realista en el que un cambio físico no afecte la lógica del sistema, y otro donde un cambio lógico pueda impactar múltiples aplicaciones sí no se gestiona adecuadamente.}
+
+    \begin{itemize}
+        \item Crear una ruta de acceso sobre el código del paquete para buscar de manera rápida el rastreo en tiempo real sin tener que cambiar la consulta de la aplicación.
+        \item Agregar la entidad de clientes corporativos modificando tablas existentes; si no se abstrae mediante un esquema externo, este cambio romperá los programas de aplicación que no utilicen ese dato.
+    \end{itemize}
+\end{itemize}
+ 
+
