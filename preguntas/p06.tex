@@ -1,1 +1,22 @@
+\subsection*{f.}
 \addcontentsline{toc}{subsection}{Inciso f}
+
+\begin{itemize}
+    \item \textbf{Investiga qué es la redundancia de datos.}
+    
+    La redundancia de datos es duplicar o almacenar información múltiples veces, dentro de una base de datos o sistemas de archivos.
+    \item \textbf{¿Cuál sería la diferencia entre redundancia de datos controlada y no controlada? Proporciona un ejemplo claro de cada tipo.}
+    \begin{enumerate}
+        \item \textbf{Redundancia no controlada:} La información se duplica de forma desorganizada e independiente entre distintos archivos, sin que el sistema valide o controle los cambios.
+        
+        \textbf{Ejemplo:} En un sistema universitario, la oficina de inscripciones y la de contabilidad guardan archivos independientes del mismo estudiante. Si el alumno cambia de domicilio, la dirección puede actualizarse en un archivo pero omitirse en el otro, o registrarse con errores tipográficos distintos en cada lugar (como fechas de nacimiento diferentes).
+        
+        \item \textbf{Redundancia controlada:} Se duplican los datos de manera intencionada y planificada dentro del diseño del sistema, donde el SMBD realiza verificaciones automáticas para garantizar que los datos siempre coincidan.
+        
+        \textbf{Ejemplo:} Guardar a propósito el nombre de un alumno junto con su calificación en el historial de materias aprobadas. Para que el sistema pueda mostrar el reporte de calificaciones rápidamente sin tener que ir a buscar el nombre a la tabla de alumnos cada vez. Para evitar inconsistencias, el SMBD se encarga automáticamente de validar que el nombre asignado al reporte coincida siempre con el alumno registrado en la base de datos principal.
+    \end{enumerate}
+    \item \textbf{¿Por qué la redundancia no controlada suele ser un problema para la integridad y consistencia de los datos?}
+    
+    La redundancia no controlada es problemática porque, al duplicar la información de forma independiente en múltiples archivos, genera inconsistencias cuando los datos cambian y solo se actualizan en un lugar pero se omiten en los demás, dejando al sistema en un estado donde las fuentes no coinciden. Además, al requerir la captura manual e independiente de un mismo dato en varios sitios, incrementa significativamente la probabilidad de cometer errores humanos o tipográficos. Todo esto  también implica una duplicación ineficiente de esfuerzo y un desperdicio de espacio de almacenamiento.
+    
+\end{itemize}

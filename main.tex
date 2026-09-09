@@ -6,11 +6,13 @@
 \usepackage{graphicx}
 \usepackage{makecell}
 \usepackage{geometry}
+\usepackage{float}
 
 % --------------------- Comandos para pie de página ---------------------
-\usepackage[style=verbose, backend=biber]{biblatex}
+\usepackage[backend=biber, style=apa]{biblatex}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{csquotes}
 
 \makeatletter
 \g@addto@macro{\UrlBreaks}{\UrlOrds}
@@ -79,5 +81,11 @@
 
  \include{ensayos/ensayoSaul.tex}
  \include{ensayos/ensayoDiego.tex}
+ \include{ensayos/ensayoLucia.tex}
+ \include{ensayos/ensayoJosé.tex}
+
+\newpage
+\nocite{*} 
+\printbibliography[title={Referencias}]
 
 \end{document}
